@@ -1,0 +1,24 @@
+{
+    "name": "alves/teste",
+    "require": {
+        "slim/slim": "2.*"
+    },
+    "authors": [
+        {
+            "name": "Davi Alves",
+            "email": "alvesdelima.davi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Controller\\" : "controller/",
+            "Model\\" : "model/",
+            "Connection\\" : "db/",
+            "Service\\" : "service/",
+            "Repository\\" : "repository/",
+            "Formatter\\": "formatter/",
+            "Util\\": "util/",
+            "Domain\\": "domain/"
+        }
+    }
+}
