@@ -1,6 +1,7 @@
 # Backend Test (with React in the frontend)
 > Steps to run the application
 > > API steps
+> - *Clone this repository on your apache localhost*
 > - If you don't have the sqlite3 php driver installed on your machine run `sudo apt install php-sqlite3 -y`
 > - Then install the `/api` dependencies with ``composer install``
 > - And *less but not least*
