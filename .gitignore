@@ -1,2 +1,3 @@
-/api/vendor/
+/api/vendor
 .idea
+/app/node_modules
