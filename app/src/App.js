@@ -7,6 +7,10 @@ class App extends Component {
         contacts: [],
     }
 
+    async handleSubmit(e){
+
+    };
+
     async componentDidMount() {
         const response = await api.get('/contacts');
         this.setState({contacts: response.data});
@@ -21,7 +25,7 @@ class App extends Component {
                 <h1>
                     Contatos
                 </h1>
-                <table>
+                <form onSubmit={this.handleSubmit}>
                     <thead>
                         <th>Nome</th>
                         <th>Idade</th>
@@ -36,11 +40,14 @@ class App extends Component {
                                 <td>{contact.age}</td>
                                 <td>{contact.phoneNumber}</td>
                                 <td>{contact.email}</td>
-                                <td colspan="2"><button>edit</button><button>delete</button></td>
+                                <td colSpan="2">
+                                    <button type="submit">edit</button>
+                                    <button type="submit">delete</button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
-                </table>
+                </form>
             </div>
         );
     }
