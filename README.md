@@ -6,5 +6,3 @@
 > - Then install the `/api` dependencies with ``composer install``
 > - And *less but not least*
 >  <br>Make sure your ambient is ready to work with the api routes by enabling `AllowOverride All` on your `httpd.conf`
-> > React App (CANCELED) I've had some issues when trying to make the react application
-> - With `npm` installed, go to the `/app` directory and run `npm start`
