@@ -1,6 +1,9 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Headers: X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding");
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Credentials: true');
+header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
+header('Access-Control-Max-Age: 86400');
+header('Access-Control-Allow-Headers: *');
 
 use Slim\Slim;
 use Controller\ContactController;
@@ -9,22 +12,19 @@ require_once 'vendor/autoload.php';
 
 $app = new Slim();
 $app->response->headers->set('Content-Type', 'application/json');
-/**
- * remember of AllowOverride ALL
- * @todo creates an array of object on contactModel for the categories, please
- */
-$app->post('/new-contact', function () use ($app) {
+
+$app->post('/contact', function () use ($app) {
     $user = new ContactController();
     $app->response->setBody(
         $user->createContactData(
-            $app->request->post()
+            $app->request->getBody()
         )
     );
 
     return $app->response->getBody();
 });
 
-$app->get('/contacts', function() use ($app) {
+$app->get('/', function() use ($app) {
     $user = new ContactController();
     $app->response->setBody($user->getAllContacts());
     return $app->response->getBody();

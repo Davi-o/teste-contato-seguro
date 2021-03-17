@@ -1,7 +1,10 @@
 {
     "name": "alves/teste",
     "require": {
-        "slim/slim": "2.*"
+        "slim/slim": "2.*",
+      "ext-pdo": "*",
+      "ext-curl": "*",
+      "ext-json": "*"
     },
     "authors": [
         {

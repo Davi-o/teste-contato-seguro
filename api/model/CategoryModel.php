@@ -4,8 +4,15 @@ namespace Model;
 
 use Domain\Category;
 
+/**
+ * Class CategoryModel
+ * @package Model
+ */
 class CategoryModel
 {
+    /**
+     * @var Category
+     */
     private Category $category;
     /**
      * CategoryModel constructor.

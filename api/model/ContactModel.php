@@ -6,8 +6,15 @@ use Service\ContactService;
 use Domain\Contact;
 use PDO;
 
+/**
+ * Class ContactModel
+ * @package Model
+ */
 class ContactModel implements Model
 {
+    /**
+     * @var Contact
+     */
     protected Contact $contact;
 
     /**
@@ -25,16 +32,26 @@ class ContactModel implements Model
         return $this->contact;
     }
 
+    /**
+     * @param $attribute
+     * @return mixed
+     */
     public function __get($attribute)
     {
         return $this->$attribute;
     }
 
+    /**
+     * @return bool
+     */
     public function save(): bool
     {
         return ContactService::insertNewContact($this->contact);
     }
 
+    /**
+     * @return string
+     */
     public function getAll(): string
     {
         $users = [];
@@ -52,6 +69,10 @@ class ContactModel implements Model
         return json_encode($users)?:"{}";
     }
 
+    /**
+     * @param $contactId
+     * @return bool
+     */
     public function delete($contactId): bool
     {
         return ContactService::deleteContact($contactId);

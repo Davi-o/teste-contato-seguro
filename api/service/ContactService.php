@@ -5,14 +5,25 @@ namespace Service;
 use Domain\Contact;
 use Repository\ContactRepository;
 
+/**
+ * Class ContactService
+ * @package Service
+ */
 class ContactService extends Connection implements ContactRepository
 {
+    /**
+     * @return false|mixed|\PDOStatement
+     */
     public static function getContactData()
     {
         parent::connect();
         return parent::$connection->query("select * from contact");
     }
 
+    /**
+     * @param Contact $userData
+     * @return bool
+     */
     public static function insertNewContact(Contact $userData): bool
     {
         parent::connect();
@@ -24,6 +35,10 @@ class ContactService extends Connection implements ContactRepository
         return $statement->execute();
     }
 
+    /**
+     * @param $contactId
+     * @return bool
+     */
     public static function deleteContact($contactId): bool
     {
         parent::connect();
@@ -33,6 +48,10 @@ class ContactService extends Connection implements ContactRepository
 
     }
 
+    /**
+     * @param Contact $contactData
+     * @return string
+     */
     private function insertQuery(Contact $contactData): string
     {
         if (! $contactData->id) {

@@ -4,9 +4,19 @@
 namespace Domain;
 
 
+/**
+ * Class Category
+ * @package Domain
+ */
 class Category
 {
+    /**
+     * @var int
+     */
     private int $contactId;
+    /**
+     * @var int
+     */
     private int $categoryId;
 
     /**

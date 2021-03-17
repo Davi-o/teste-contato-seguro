@@ -1,13 +1,24 @@
 <?php
 
-
 namespace Domain;
 
-
+/**
+ * Class ContactCategory
+ * @package Domain
+ */
 class ContactCategory
 {
+    /**
+     * @var int
+     */
     private int $id;
+    /**
+     * @var int
+     */
     private int $contactId;
+    /**
+     * @var int
+     */
     private int $categoryId;
 
     /**
