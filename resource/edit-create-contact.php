@@ -29,19 +29,19 @@
         ?>
         <form id="new-contact" method="post" action="handlePost.php" class="NewContactForm">
             <div class="form-group">
-                <input name="id" type="hidden" value="<?php echo $_POST['id']; ?>"/>
+                <input name="id" type="hidden" value="<?php if (isset($_POST['id'])) {echo $_POST['id'];} ?>"/>
             </div>
             <div class="form-group">
-                <input placeholder="John Doe" id ="name" name="name" class="textInput" type="text" value="<?php echo $_POST['name']; ?>"/>
+                <input placeholder="John Doe" id ="name" name="name" class="textInput" type="text" value="<?php if(isset($_POST['name'])){echo $_POST['name']?:null;} ?>"/>
             </div>
             <div class="form-group">
-                <input placeholder="50" id"age" name="age" class="textInput" type="number" value="<?php echo $_POST['age']; ?>"/>
+                <input placeholder="50" id"age" name="age" class="textInput" type="number" value="<?php if(isset($_POST['age'])){echo $_POST['age'];} ?>"/>
             </div>
             <div class="form-group">
-                <input placeholder="999999999" id="phoneNumber" name="phoneNumber" class="textInput" type="text" value="<?php echo $_POST['phoneNumber']; ?>"/>
+                <input placeholder="999999999" id="phoneNumber" name="phoneNumber" class="textInput" type="text" value="<?php if(isset($_POST['phoneNumber'])){echo $_POST['phoneNumber'];} ?>"/>
             </div>
             <div class="form-group">
-                <input placeholder="john@doe.com" id="email" name="email" class="textInput" type="email" value="<?php echo $_POST['email']; ?>"/>
+                <input placeholder="john@doe.com" id="email" name="email" class="textInput" type="email" value="<?php if(isset($_POST['email'])){echo $_POST['email'];} ?>"/>
             </div>
             <div class="form-group">
                 <button class="btn bg-info text-white" type="submit">Enviar</button>
