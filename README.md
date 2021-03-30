@@ -1,4 +1,4 @@
-# Backend Test (with React in the frontend)
+# Backend Test
 > Steps to run the application
 > > API steps
 > - *Clone this repository in `/var/www/html` (the php server web folder)*
